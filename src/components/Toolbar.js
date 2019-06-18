@@ -1,168 +1,225 @@
 import React, { Component } from 'react';
+import { fade, makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
+import Typography from '@material-ui/core/Typography';
+import InputBase from '@material-ui/core/InputBase';
+import Badge from '@material-ui/core/Badge';
+import MenuItem from '@material-ui/core/MenuItem';
+import Menu from '@material-ui/core/Menu';
+import MenuIcon from '@material-ui/icons/Menu';
+import SearchIcon from '@material-ui/icons/Search';
+import AccountCircle from '@material-ui/icons/AccountCircle';
+import MailIcon from '@material-ui/icons/Mail';
+import NotificationsIcon from '@material-ui/icons/Notifications';
+import MoreIcon from '@material-ui/icons/MoreVert';
+import Avatar from '@material-ui/core/Avatar';
 
-class Toolbar extends Component {
-  state = {}
-  render() {
-    return (
-      <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-        <button id="sidebarToggleTop" className="btn btn-link d-md-none rounded-circle mr-3">
-          <i className="fa fa-bars"></i>
-        </button>
-        <form className="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-          <div className="input-group">
-            <input type="text" className="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
-            <div className="input-group-append">
-              <button className="btn btn-primary" type="button">
-                <i className="fas fa-search fa-sm"></i>
-              </button>
-            </div>
-          </div>
-        </form>
-        <ul className="navbar-nav ml-auto">
-          <li className="nav-item dropdown no-arrow d-sm-none">
-            <a className="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i className="fas fa-search fa-fw"></i>
-            </a>
-            <div className="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
-              <form className="form-inline mr-auto w-100 navbar-search">
-                <div className="input-group">
-                  <input type="text" className="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
-                  <div className="input-group-append">
-                    <button className="btn btn-primary" type="button">
-                      <i className="fas fa-search fa-sm"></i>
-                    </button>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </li>
-          <li className="nav-item dropdown no-arrow mx-1">
-            <a className="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i className="fas fa-bell fa-fw"></i>
-              <span className="badge badge-danger badge-counter">3+</span>
-            </a>
-            <div className="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
-              <h6 className="dropdown-header">
-                Alerts Center
-                </h6>
-              <a className="dropdown-item d-flex align-items-center" href="#">
-                <div className="mr-3">
-                  <div className="icon-circle bg-primary">
-                    <i className="fas fa-file-alt text-white"></i>
-                  </div>
-                </div>
-                <div>
-                  <div className="small text-gray-500">December 12, 2019</div>
-                  <span className="font-weight-bold">A new monthly report is ready to download!</span>
-                </div>
-              </a>
-              <a className="dropdown-item d-flex align-items-center" href="#">
-                <div className="mr-3">
-                  <div className="icon-circle bg-success">
-                    <i className="fas fa-donate text-white"></i>
-                  </div>
-                </div>
-                <div>
-                  <div className="small text-gray-500">December 7, 2019</div>
-                  $290.29 has been deposited into your account!
-                  </div>
-              </a>
-              <a className="dropdown-item d-flex align-items-center" href="#">
-                <div className="mr-3">
-                  <div className="icon-circle bg-warning">
-                    <i className="fas fa-exclamation-triangle text-white"></i>
-                  </div>
-                </div>
-                <div>
-                  <div className="small text-gray-500">December 2, 2019</div>
-                  Spending Alert: We've noticed unusually high spending for your account.
-                  </div>
-              </a>
-              <a className="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-            </div>
-          </li>
-          <li className="nav-item dropdown no-arrow mx-1">
-            <a className="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i className="fas fa-envelope fa-fw"></i>
-              <span className="badge badge-danger badge-counter">7</span>
-            </a>
-            <div className="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
-              <h6 className="dropdown-header">
-                Message Center
-                </h6>
-              <a className="dropdown-item d-flex align-items-center" href="#">
-                <div className="dropdown-list-image mr-3">
-                  <img className="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="" />
-                  <div className="status-indicator bg-success"></div>
-                </div>
-                <div className="font-weight-bold">
-                  <div className="text-truncate">Hi there! I am wondering if you can help me with a problem I've been having.</div>
-                  <div className="small text-gray-500">Emily Fowler · 58m</div>
-                </div>
-              </a>
-              <a className="dropdown-item d-flex align-items-center" href="#">
-                <div className="dropdown-list-image mr-3">
-                  <img className="rounded-circle" src="https://source.unsplash.com/AU4VPcFN4LE/60x60" alt="" />
-                  <div className="status-indicator"></div>
-                </div>
-                <div>
-                  <div className="text-truncate">I have the photos that you ordered last month, how would you like them sent to you?</div>
-                  <div className="small text-gray-500">Jae Chun · 1d</div>
-                </div>
-              </a>
-              <a className="dropdown-item d-flex align-items-center" href="#">
-                <div className="dropdown-list-image mr-3">
-                  <img className="rounded-circle" src="https://source.unsplash.com/CS2uCrpNzJY/60x60" alt="" />
-                  <div className="status-indicator bg-warning"></div>
-                </div>
-                <div>
-                  <div className="text-truncate">Last month's report looks great, I am very happy with the progress so far, keep up the good work!</div>
-                  <div className="small text-gray-500">Morgan Alvarez · 2d</div>
-                </div>
-              </a>
-              <a className="dropdown-item d-flex align-items-center" href="#">
-                <div className="dropdown-list-image mr-3">
-                  <img className="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="" />
-                  <div className="status-indicator bg-success"></div>
-                </div>
-                <div>
-                  <div className="text-truncate">Am I a good boy? The reason I ask is because someone told me that people say this to all dogs, even if they aren't good...</div>
-                  <div className="small text-gray-500">Chicken the Dog · 2w</div>
-                </div>
-              </a>
-              <a className="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
-            </div>
-          </li>
-          <div className="topbar-divider d-none d-sm-block"></div>
-          <li className="nav-item dropdown no-arrow">
-            <a className="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span className="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
-              <img className="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60" />
-            </a>
-            <div className="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-              <a className="dropdown-item" href="#">
-                <i className="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                Profile
-                </a>
-              <a className="dropdown-item" href="#">
-                <i className="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                Settings
-                </a>
-              <a className="dropdown-item" href="#">
-                <i className="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                Activity Log
-                </a>
-              <div className="dropdown-divider"></div>
-              <a className="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                <i className="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                Logout
-                </a>
-            </div>
-          </li>
-        </ul>
-      </nav>
-    );
+const useStyles = makeStyles(theme => ({
+  grow: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  title: {
+    // display: 'none',
+    [theme.breakpoints.up('sm')]: {
+      display: 'block',
+    },
+  },
+  search: {
+    position: 'relative',
+    borderRadius: theme.shape.borderRadius,
+    backgroundColor: fade(theme.palette.common.white, 0.15),
+    '&:hover': {
+      backgroundColor: fade(theme.palette.common.white, 0.25),
+    },
+    marginRight: theme.spacing(2),
+    marginLeft: 0,
+    width: '100%',
+    [theme.breakpoints.up('sm')]: {
+      marginLeft: theme.spacing(3),
+      width: 'auto',
+    },
+  },
+  searchIcon: {
+    width: theme.spacing(7),
+    height: '100%',
+    position: 'absolute',
+    pointerEvents: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  inputRoot: {
+    color: 'inherit',
+  },
+  inputInput: {
+    padding: theme.spacing(1, 1, 1, 7),
+    transition: theme.transitions.create('width'),
+    width: '100%',
+    [theme.breakpoints.up('md')]: {
+      width: 200,
+    },
+  },
+  sectionDesktop: {
+    display: 'none',
+    [theme.breakpoints.up('md')]: {
+      display: 'flex',
+    },
+  },
+  sectionMobile: {
+    display: 'flex',
+    [theme.breakpoints.up('md')]: {
+      display: 'none',
+    },
+  },
+}));
+
+function Toolbar(props) {
+  const classes = useStyles();
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+
+  const isMenuOpen = Boolean(anchorEl);
+  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+
+  function handleProfileMenuOpen(event) {
+    setAnchorEl(event.currentTarget);
   }
+
+  function handleMobileMenuClose() {
+    setMobileMoreAnchorEl(null);
+  }
+
+  function handleMenuClose() {
+    setAnchorEl(null);
+    handleMobileMenuClose();
+  }
+
+  function handleMobileMenuOpen(event) {
+    setMobileMoreAnchorEl(event.currentTarget);
+  }
+
+  const menuId = 'primary-search-account-menu';
+  const renderMenu = (
+    <Menu
+      anchorEl={anchorEl}
+      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      id={menuId}
+      keepMounted
+      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      open={isMenuOpen}
+      onClose={handleMenuClose}
+    >
+      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+    </Menu>
+  );
+
+  const mobileMenuId = 'primary-search-account-menu-mobile';
+  const renderMobileMenu = (
+    <Menu
+      anchorEl={mobileMoreAnchorEl}
+      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      id={mobileMenuId}
+      keepMounted
+      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      open={isMobileMenuOpen}
+      onClose={handleMobileMenuClose}
+    >
+      <MenuItem>
+        <IconButton aria-label="Show 4 new mails" color="inherit">
+          <Badge badgeContent={4} color="secondary">
+            <MailIcon />
+          </Badge>
+        </IconButton>
+        <p>Messages</p>
+      </MenuItem>
+      <MenuItem>
+        <IconButton aria-label="Show 11 new notifications" color="inherit">
+          <Badge badgeContent={11} color="secondary">
+            <NotificationsIcon />
+          </Badge>
+        </IconButton>
+        <p>Notifications</p>
+      </MenuItem>
+      <MenuItem onClick={handleProfileMenuOpen}>
+        <IconButton
+          aria-label="Account of current user"
+          aria-controls="primary-search-account-menu"
+          aria-haspopup="true"
+          color="inherit"
+        >
+          <AccountCircle />
+        </IconButton>
+        <p>Profile</p>
+      </MenuItem>
+    </Menu>
+  );
+
+  return (
+    <div className={classes.grow}>
+      <AppBar position="static" >
+        <Toolbar>
+          <Typography className={classes.title} variant="h6" noWrap>
+            Lernit
+          </Typography>
+          <div className={classes.search}>
+            <div className={classes.searchIcon}>
+              <SearchIcon />
+            </div>
+            <InputBase
+              placeholder="Search…"
+              classes={{
+                root: classes.inputRoot,
+                input: classes.inputInput,
+              }}
+              inputProps={{ 'aria-label': 'Search' }}
+            />
+          </div>
+          <div className={classes.grow} />
+          <div className={classes.sectionDesktop}>
+            <IconButton aria-label="Show 4 new mails" color="inherit">
+              <Badge badgeContent={4} color="secondary">
+                <MailIcon />
+              </Badge>
+            </IconButton>
+            <IconButton aria-label="Show 17 new notifications" color="inherit">
+              <Badge badgeContent={17} color="secondary">
+                <NotificationsIcon />
+              </Badge>
+            </IconButton>
+            <IconButton
+              edge="end"
+              aria-label="Account of current user"
+              aria-controls={menuId}
+              aria-haspopup="true"
+              onClick={handleProfileMenuOpen}
+              color="inherit"
+            >
+              <Avatar alt="Remy Sharp" src={user.media.profilePictures.path} className={classes.avatar} />
+            </IconButton>
+          </div>
+          <div className={classes.sectionMobile}>
+            <IconButton
+              aria-label="Show more"
+              aria-controls={mobileMenuId}
+              aria-haspopup="true"
+              onClick={handleMobileMenuOpen}
+              color="inherit"
+            >
+              <MoreIcon />
+            </IconButton>
+          </div>
+        </Toolbar>
+      </AppBar>
+      {renderMobileMenu}
+      {renderMenu}
+    </div>
+  );
 }
 
 export default Toolbar;

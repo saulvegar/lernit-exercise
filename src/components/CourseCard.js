@@ -26,21 +26,21 @@ const CourseCard = props => {
 
   return (
     <Card className={classes.card}>
-      <CardHeader
+      {/* <CardHeader
         action={
           <IconButton aria-label="Settings">
             <MoreVertIcon />
           </IconButton>
         }
       >
-        <CardMedia
-          className={classes.media}
-          image={course.imageUrl}
-          title={course.name}
-        />
-      </CardHeader>
+      </CardHeader> */}
       <CardActionArea>
         <CardContent>
+          <CardMedia
+            className={classes.media}
+            image={course.imageUrl}
+            title={course.name}
+          />
           <Typography gutterBottom variant="h5" component="h2">
             {course.name}
           </Typography>
